@@ -13,3 +13,4 @@ distr/*/
 *.glyphs
 !FiraCode.glyphs
 
+package
