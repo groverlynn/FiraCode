@@ -96,6 +96,7 @@ fi
 
 ./build_ttf.sh "${weights[@]}"
 ./build_variable.sh
+./build_otf.sh
 ./build_woff2.sh
 ./build_woff.sh
 

@@ -89,7 +89,7 @@ name = openTypeOS2Panose;
 value = (
 2,
 11,
-8,
+0,
 9,
 5,
 0,
@@ -134268,6 +134268,21 @@ width = 1200;
 );
 instances = (
 {
+customParameters = (
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 300;
+}
+);
+},
+{
+name = postscriptFontName;
+value = "FiraCode-Light";
+}
+);
 interpolationWeight = 62;
 instanceInterpolations = {
 "B67F0F2D-EC95-4CB8-966E-23AE86958A69" = 1;
@@ -134276,6 +134291,25 @@ name = Light;
 weightClass = Light;
 },
 {
+customParameters = (
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 400;
+}
+);
+},
+{
+name = "Elidable STAT Axis Value Name";
+value = wght;
+},
+{
+name = postscriptFontName;
+value = "FiraCode-Regular";
+}
+);
 interpolationWeight = 84;
 instanceInterpolations = {
 "4B7A3BAF-EAD8-4024-9BEA-BB1DE86CFCFA" = 0.22917;
@@ -134286,8 +134320,21 @@ name = Regular;
 {
 customParameters = (
 {
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 450;
+}
+);
+},
+{
 name = weightClass;
 value = 450;
+},
+{
+name = postscriptFontName;
+value = "FiraCode-Retina";
 }
 );
 interpolationWeight = 96;
@@ -134298,6 +134345,21 @@ instanceInterpolations = {
 name = Retina;
 },
 {
+customParameters = (
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 500;
+}
+);
+},
+{
+name = postscriptFontName;
+value = "FiraCode-Medium";
+}
+);
 interpolationWeight = 112;
 instanceInterpolations = {
 "4B7A3BAF-EAD8-4024-9BEA-BB1DE86CFCFA" = 0.52083;
@@ -134307,6 +134369,21 @@ name = Medium;
 weightClass = Medium;
 },
 {
+customParameters = (
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 600;
+}
+);
+},
+{
+name = postscriptFontName;
+value = "FiraCode-SemiBold";
+}
+);
 interpolationWeight = 132;
 instanceInterpolations = {
 "4B7A3BAF-EAD8-4024-9BEA-BB1DE86CFCFA" = 0.72917;
@@ -134316,11 +134393,27 @@ name = SemiBold;
 weightClass = SemiBold;
 },
 {
+customParameters = (
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 700;
+}
+);
+},
+{
+name = postscriptFontName;
+value = "FiraCode-Bold";
+}
+);
 interpolationWeight = 158;
 instanceInterpolations = {
 "4B7A3BAF-EAD8-4024-9BEA-BB1DE86CFCFA" = 1;
 };
 isBold = 1;
+linkStyle = Regular;
 name = Bold;
 weightClass = Bold;
 }

@@ -10,8 +10,7 @@ source venv/bin/activate
 # https://github.com/googlefonts/gftools/issues/121
 brew install pkg-config
 brew install zlib
-#pip install -U Pillow==5.4.1 idna==2.8 requests==2.21.0 urllib3==1.24.1
-pip install -U Pillow idna requests urllib3
+pip install -U Pillow==5.4.1 idna==2.8 requests==2.21.0 urllib3==1.24.1
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 pip install pycairo
 pip install git+https://github.com/googlefonts/gftools

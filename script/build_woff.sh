@@ -6,6 +6,7 @@ cd "$(dirname "$0")/.."
 family_name=${FIRACODE_FAMILY_NAME:-"Fira Code"}
 
 ttf_dir="distr/ttf/${family_name}"
+vf_ttf_dir="distr/variable_ttf/${family_name}"
 woff_dir="distr/woff/${family_name}"
 
 echo "=============="
@@ -25,3 +26,10 @@ done
 
 mv "${ttf_dir}/"*.woff "${woff_dir}"
 #rm -f "${woff_dir}/FiraCode-Retina.woff"
+
+for vf_ttf in "${vf_ttf_dir}/"*.ttf; do
+	echo "sfnt2woff-zopfli ${vf_ttf}"
+	sfnt2woff-zopfli "${vf_ttf}"
+done
+
+mv "${vf_ttf_dir}/"*.woff "${woff_dir}"

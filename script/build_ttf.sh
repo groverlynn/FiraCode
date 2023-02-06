@@ -23,9 +23,11 @@ for weight in "${weights[@]}"; do
 	echo "  [i] Creating ${file}"
 	echo
 
-	fontmake -g "${glyphs_file}" -o ttf --output-path "${file}" -i ".* ${weight}"
+	fontmake -g "${glyphs_file}" -o ttf --output-dir "${dir}" -i ".* ${weight}"  --family-name "${family_name}" --autohint "--no-info --ignore-restrictions"
 
-	echo "  [i] TTFautohint ${file}"
-	ttfautohint --no-info --ignore-restrictions "${file}" "${file}.hinted"
-	mv "${file}.hinted" "${file}"
+# 	echo "  [i] TTFautohint ${file}"
+# 	ttfautohint --no-info --ignore-restrictions "${file}" "${file}.hinted"
+# 	mv "${file}.hinted" "${file}"
 done
+
+# fontmake -g "${glyphs_file}" -o ttf --output-dir "${dir}" -i --family-name "${family_name}" --autohint "--no-info --ignore-restrictions"

@@ -6,8 +6,8 @@ cd "$(dirname "$0")/.."
 family_name=${FIRACODE_FAMILY_NAME:-"Fira Code"}
 glyphs_file=${FIRACODE_GLYPHS_FILE:-"FiraCode.glyphs"}
 
-dir="distr/variable_ttf/${family_name}"
-file="${dir}/FiraCode-VF.ttf"
+dir="distr/variable_otf/${family_name}"
+file="${dir}/FiraCode-VF.otf"
 
 echo "=============="
 echo
@@ -25,14 +25,8 @@ vf_glyphs=${vf_glyphs}.glyphs
 awk '/name = Retina  ;/ { print; print "export = 1;"; next }1' \
 	"${glyphs_file}" > "${vf_glyphs}"
 
-fontmake -g "${vf_glyphs}" -o variable --output-dir "${dir}" --family-name "${family_name}"
+fontmake -g "${vf_glyphs}" -o variable-cff2 --output-dir "${dir}" --family-name "${family_name}"
 rm -f "${vf_glyphs}"
-
-# # fix variable font metadata – very important
-# gftools fix-weightclass "${file}"
-# mv "${file}.fix" "${file}"
-# gftools fix-nameids "${file}"
-# mv "${file}.fix" "${file}"
 
 # other fixes for metadata and hinting
 gftools fix-nonhinting "${file}" "${file}.fix"
@@ -42,6 +36,6 @@ gftools fix-gasp --autofix "${file}"
 mv "${file}.fix" "${file}"
 
 # cleanup of temp files
-rm -rf "${dir}/"*-gasp.ttf
+rm -rf "${dir}/"*-gasp.otf
 
 # TODO (late 2019?): use TTFautohint-VF for variable font (current support is minimal)

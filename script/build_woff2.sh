@@ -6,15 +6,16 @@ cd "$(dirname "$0")/.."
 family_name=${FIRACODE_FAMILY_NAME:-"Fira Code"}
 
 ttf_dir="distr/ttf/${family_name}"
-woff_dir="distr/woff2/${family_name}"
+vf_ttf_dir="distr/variable_ttf/${family_name}"
+woff2_dir="distr/woff2/${family_name}"
 
 echo "=============="
 echo
 echo "  [i] Creating .woff2 files!"
 echo
 
-mkdir -p "${woff_dir}"
-rm -rf "${woff_dir:?}/"*
+mkdir -p "${woff2_dir}"
+rm -rf "${woff2_dir:?}/"*
 
 # requires woff2_compress (get from https://github.com/bramstein/homebrew-webfonttools)
 
@@ -23,5 +24,12 @@ for ttf in "${ttf_dir}/"*.ttf; do
 	woff2_compress "${ttf}"
 done
 
-mv "${ttf_dir}/"*.woff2 "${woff_dir}"
+mv "${ttf_dir}/"*.woff2 "${woff2_dir}"
 #rm -f "${woff_dir}/FiraCode-Retina.woff2"
+
+for vf_ttf in "${vf_ttf_dir}/"*.ttf; do
+	echo "woff2_compress ${vf_ttf}"
+	woff2_compress "${vf_ttf}"
+done
+
+mv "${vf_ttf_dir}/"*.woff2 "${woff2_dir}"
