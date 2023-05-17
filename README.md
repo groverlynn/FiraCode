@@ -91,7 +91,8 @@ Unicode coverage makes Fira Code a great choice for mathematical writing:
 
 | Works | Doesn’t work   |
 |-------|----------------|
-| **Abricotine** | **Arduino IDE** |
+| **Arduino IDE** (2.0+,same instructions as [vscode](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions))
+| **Abricotine** |
 | **Android Studio** (2.3+, [instructions](https://github.com/tonsky/FiraCode/wiki/IntelliJ-products-instructions)) | **Adobe Dreamweaver** |
 | **Anjuta** (unless at the EOF) | **Delphi IDE** |
 | **AppCode** (2016.2+, [instructions](https://github.com/tonsky/FiraCode/wiki/IntelliJ-products-instructions)) | Standalone **Emacs** ([workaround](https://github.com/tonsky/FiraCode/wiki/Emacs-instructions)) | **IDLE** |
@@ -275,6 +276,9 @@ You can also limit the font weights that will be created with the `-w / --weight
 
 # or via a docker container (creates the family name 'Fira Code cv01 cv02 cv06 cv31 onum ss01 ss03 ss04 zero')
 docker run --rm -v "${PWD}":/opt tonsky/firacode:latest ./script/build.sh -f "cv01,cv02,cv06,ss01,zero,onum,ss03,ss04,cv31" -n "features"
+
+# in Git Bash from Git for Windows, or any other MSYS2 based shell, you might need to disable path conversion
+MSYS2_ARG_CONV_EXCL="*" docker run --rm -v "${PWD}":/opt tonsky/firacode:latest ./script/build.sh -f "ss02,ss03,ss04,ss05,ss06,ss07"
 ```
 
 ### Credits
